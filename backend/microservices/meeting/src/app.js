@@ -13,7 +13,13 @@ app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(openapiSpec));
 
 // ---- API routes ----
 app.use('/api/meetings', meetingRoutes);
-
+// Health check
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    service: 'meeting',
+    status: 'UP'
+  });
+});
 // ---- 404 for unknown routes ----
 app.use((req, res) => {
   res.status(404).json({ status: 404, error: 'Not Found', message: `Route ${req.method} ${req.originalUrl} not found` });
