@@ -9,7 +9,9 @@
         <module name="candidat" />
         <module name="job" />
         <module name="eureka-server" />
+        <module name="candidat (1)" />
         <module name="canditature" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
